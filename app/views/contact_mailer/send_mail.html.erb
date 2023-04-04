@@ -1,0 +1,15 @@
+<hr>
+お問い合わせフォームから新しいメッセージを受け取りました。<br>
+<hr><br>
+
+
+<b>お名前：</b><br>
+<%= @contact.name %><br><br>
+<b>メールアドレス：</b><br>
+<%= @contact.email %><br><br>
+<b>電話番号：</b><br>
+<%= @contact.phone_number %><br><br>
+<b>お問い合わせ内容：</b><br>
+<%=safe_join(@contact.message.split("\n"),tag(:br))%><br><br>
+
+<hr>

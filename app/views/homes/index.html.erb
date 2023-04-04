@@ -1,0 +1,103 @@
+<main class="w-full">
+
+    <div class="relative fadeInTrigger">
+        <div class="absolute bottom-8 lg:bottom-28 bg-slate-400 text-lg sm:text-3xl md:text-4xl p-2 md:p-4 text-white font-semibold bg-opacity-90 fadeInTrigger">一人ひとりのグッドライフを、</div>
+        <div class="absolute -bottom-5 lg:bottom-8 bg-slate-400 text-lg sm:text-3xl md:text-4xl p-2 md:p-4 text-white font-semibold bg-opacity-90 fadeInTrigger">全力でアシストします。</div>
+        <%= image_tag "https://ms-corpo-0310.com/wp-content/uploads/2022/12/img_menu01.jpg", class: "w-full max-h-screen object-cover main_banner" %>
+    </div>
+
+    <div class="max-w-5xl container mx-auto  fadeInTrigger">
+        
+        <div class="px-4 mt-16 mb-12 lg:my-20">
+            <div class=" max-w-3xl mx-auto">
+        <div class="text-sm md:text-lg text-center text-slate-400 mb-2">私たちは保険の総合代理店です</div>
+        <h2 class="font-semibold text-xl sm:text-2xl md:text-3xl text-center mb-4">あなたのより良い人生計画の<br class="block md:hidden">手助けをさせてください</h2>
+        私たちは皆さんの金融リテラシーの向上に努めます。身内や友人にも話しにくいお金の話、プロにご相談ください。その答えが保険で解決できない時は、保険はすすめません。
+        </div>
+        </div>
+    </div>
+    <div class="w-full bg-gray-100 py-10 md:py-16 px-4">
+        <div class="max-w-5xl container mx-auto fadeUpTrigger">
+            <h2 class="font-semibold text-xl md:text-3xl text-center mb-4 md:mb-6 main_title">取り扱い保険一覧</h2>
+            <div class="bg-gray-100 md:grid grid-cols-3 md:gap-4">
+                <%= link_to "https://www.himawari-life.co.jp/", target: :_blank do %><%= image_tag "sompo.jpg", class:"mb-4 md:mb-0 w-full bg-white p-6" %><% end %>
+                <%= link_to "https://www.axa-direct.co.jp/", target: :_blank do %><%= image_tag "axa.jpg", class:"mb-4 md:mb-0 w-full bg-white p-6" %><% end %>
+                <%= link_to "https://www.ms-ins.com/", target: :_blank do %><%= image_tag "msad.jpg", class:" w-full bg-white p-6" %><% end %>
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-full my-12 md:my-20 px-4">
+        <div class="max-w-5xl container mx-auto">
+            <div class="md:flex items-center justify-between">
+                <div class="bg-gray-100 p-4 md:p-6 mb-8 md:mb-0 md:w-1/2 md:mr-6 text-center fadeUpTrigger zoomIn">
+                    <%= link_to about_path, class: "" do %>
+                        <span class="mask"><img src="https://customerlinks.jp/assets/images/top/service_business.png" border="0"></span>
+                        <h3 class="font-semibold text-lg my-4">当社について</h3>
+                        <div class="my-4 text-left">保険のプロフェッショナルの私たちにお任せください。小さな疑問でも親身になって適切なサポートをします。</div>
+                        <div class="bg-slate-400 hover:bg-slate-500 duration-500 text-white p-2 block w-1/2 mx-auto">詳しく見る</div>
+                    <% end %>
+                </div>
+                <div class="bg-gray-100 p-4 md:p-6 mb-8 md:mb-0 md:w-1/2 text-center fadeUpTrigger zoomIn">
+                    <%= link_to faq_path, class: "" do %>
+                        <span class="mask"><img src="https://customerlinks.jp/assets/images/top/service_personal.png" border="0"></span>
+                        <h3 class="font-semibold text-lg my-4">よくある質問</h3>
+                        <div class="my-4 text-left">お客様からよくいただくご質問をまとめております。ご参考ください。</div>
+                        <div class="bg-slate-400 hover:bg-slate-500 duration-500 text-white p-2 block w-1/2 mx-auto">詳しく見る</div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="w-full bg-gradient-to-b from-slate-500 to-slate-400 py-10 md:py-12 px-4">
+        <div class="max-w-5xl container mx-auto  fadeUpTrigger">
+            <div class="md:grid grid-cols-3 gap-4">
+                <div class="p-10 h-28 mb-4 md:mb-0 bg-white"></div>
+                <div class="p-10 h-28 mb-4 md:mb-0 bg-white"></div>
+                <div class="p-10 h-28 bg-white"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full my-12 md:my-20">
+        <div class="max-w-5xl container mx-auto  fadeUpTrigger">
+            <h2 class="font-semibold text-xl md:text-3xl text-center mb-4 md:mb-6 main_title">お知らせ</h2>
+            <%= link_to "#", class:"border-t border-b flex items-center justify-between py-4 px-6 hover:opacity-70" do %>
+                <div class="sm:flex items-center w-5/6">
+                    <div class="flex items-center">
+                        <div class="mr-2 md:mr-4 text-sm">2023.03.07</div>
+                        <div class="bg-gray-100 py-1 px-1.5 mr-4 inline text-xs md:text-sm">お知らせ</div>
+                    </div>
+                    <div class="mt-2 sm:mt-0 news_title">台風への備えと災害対策のポイントについて</div>
+                </div>
+                <i class="ph-caret-right"></i>
+            <% end %>
+            <%= link_to "#", class:"border-b flex items-center justify-between py-4 px-6 hover:opacity-70" do %>
+                <div class="sm:flex items-center w-5/6">
+                    <div class="flex items-center">
+                        <div class="mr-2 md:mr-4 text-sm">2023.03.04</div>
+                        <div class="bg-gray-100 py-1 px-1.5 mr-4 inline text-xs md:text-sm">お知らせ</div>
+                    </div>
+                    <div class="mt-2 sm:mt-0 news_title">大雪・寒波への対策について</div>
+                </div>
+                <i class="ph-caret-right"></i>
+            <% end %>
+            <%= link_to "#", class:"border-b flex items-center justify-between py-4 px-6 hover:opacity-70" do %>
+                <div class="sm:flex items-center w-5/6">
+                    <div class="flex items-center">
+                        <div class="mr-2 md:mr-4 text-sm">2023.03.01</div>
+                        <div class="bg-gray-100 py-1 px-1.5 mr-4 inline text-xs md:text-sm">お知らせ</div>
+                    </div>
+                    <div class="mt-2 sm:mt-0 news_title">ホームページリニューアル</div>
+                </div>
+                <i class="ph-caret-right"></i>
+            <% end %>
+            <%= link_to "#", class:"bg-slate-400 hover:bg-slate-500 duration-500 text-white p-3 md:p-4 block w-1/2 mx-auto text-center mt-6 md:mt-8" do %>
+                もっと見る
+            <% end %>
+        </div>
+    </div>
+
+    -->
+</main>

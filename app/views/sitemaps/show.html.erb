@@ -1,0 +1,19 @@
+<% content_for :page_title do %>サイトマップ<% end %>
+<% content_for :page_sub_title do %>SITEMAP<% end %>
+
+<% breadcrumb :sitemap %>
+
+<main class="w-full my-12 md:my-16 ">
+    <div class="max-w-3xl container mx-auto px-4">
+        <div class="max-w-5xl container mx-auto">
+            <%= link_to root_path, class:"block p-3 border font-semibold mb-4 flex items-center justify-between hover:text-slate-500" do %>ホーム<i class="ph ph-caret-right text-888"></i><% end %>
+            <%= link_to about_path, class:"block p-3 border font-semibold mb-4 flex items-center justify-between hover:text-slate-500" do %>当社について<i class="ph ph-caret-right text-888"></i><% end %>
+            <%= link_to service_path, class:"block p-3 border font-semibold mb-4 flex items-center justify-between hover:text-slate-500" do %>保険のご案内<i class="ph ph-caret-right text-888"></i><% end %>
+            <%= link_to faq_path, class:"block p-3 border font-semibold mb-4 flex items-center justify-between hover:text-slate-500" do %>よくある質問<i class="ph ph-caret-right text-888"></i><% end %>
+            <%= link_to contact_path, class:"block p-3 border font-semibold mb-4 flex items-center justify-between hover:text-slate-500" do %>お問い合わせ<i class="ph ph-caret-right text-888"></i><% end %>
+            <%= link_to invitation_path, class:"block p-3 border font-semibold mb-4 flex items-center justify-between hover:text-slate-500" do %>勧誘方針<i class="ph ph-caret-right text-888"></i><% end %>
+            <%= link_to policy_path, class:"block p-3 border font-semibold mb-4 flex items-center justify-between hover:text-slate-500" do %>プライバシーポリシー<i class="ph ph-caret-right text-888"></i><% end %>
+            <%= link_to sitemap_path, class:"block p-3 border font-semibold mb-4 flex items-center justify-between hover:text-slate-500" do %>サイトマップ<i class="ph ph-caret-right text-888"></i><% end %>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= favicon_link_tag('favicon.ico') %>
+    <title><% if request.path == root_path %>グッドライフアシスト | 大阪市中央区の保険代理店<% else %><%= yield :page_title %> | グッドライフアシスト<% end %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="flex flex-col min-h-screen relative tracking-wide">
+    <div id="splash">
+    <!--/splash--></div>
+    <div class="splashbg"></div><!---画面遷移用-->
+    <div class="flex flex-col min-h-screen relative" id="container">
+    <%= render "layouts/header" %>
+    <main class="mx-auto flex-grow w-full">
+          <% if controller_name != 'homes' %>
+            <div class="w-full bg-gradient-to-r from-slate-500 to-slate-400 py-6 md:py-12 px-4">
+                <div class="max-w-5xl container mx-auto text-center">
+                    <h2 class="text-white text-xl md:text-3xl font-semibold"><%= yield :page_title %></h2>
+                    <div class="text-sm md:text-base text-slate-300 font-semibold"><%= yield :page_sub_title %></div>
+                </div>
+            </div>
+          <% end %>
+          <div class="px-4 lg:px-0 overflow-x-auto flex md:justify-between md:max-w-5xl mx-auto text-xs md:text-sm">
+            <div class="flex-none">
+              <div class="flex flex-col items-center justify-center gap-3">
+                <%= breadcrumbs separator: " #{content_tag(:i, '', :class=>'ph-caret-right-bold mx-1')} ",class:"gretel flex items-center py-3 md:py-4 tracking-wider" %>
+              </div>
+            </div>
+        </div>
+      <%= yield %>
+    </main>
+    <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>

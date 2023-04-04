@@ -1,0 +1,87 @@
+<footer class="w-full h-auto static bottom-0">
+    <div class="w-full bg-gray-100 py-10 md:py-24 px-4">
+        <div class="max-w-5xl container mx-auto fadeUpTrigger">
+            <h2 class="font-semibold text-xl md:text-3xl text-center mb-4 md:mb-6 main_title">お気軽にご相談ください</h2>
+            <div class="bg-gray-100 md:grid grid-cols-2 gap-4">
+                <div class="bg-white p-10 mb-4 md:mb-0 text-center">
+                    <div class="font-semibold text-lg mb-4 flex items-center justify-center"><i class="ph-phone mr-2"></i>お電話でのお問い合わせ</div>
+                    <%= link_to "tel:06-7167-3855", class:"flex items-center justify-center text-3xl" do %>
+                    06-7167-3855
+                    <% end %>
+                    <div class="mt-4 text-sm">営業時間 9:00 - 17:00<br>土日・祝日および当社指定休日を除く</div>
+                </div>
+                <div class="bg-white p-10 md:mb-0 text-center">
+                    <div class="font-semibold text-lg mb-4 flex items-center justify-center"><i class="ph-envelope-simple mr-2"></i>メールでのお問い合わせ</div>
+                    <div class="mb-4 text-sm">メールでのお問い合わせは、<br>以下の専用フォームをご利用ください</div>
+                    <%= link_to contact_path, class:"inline-flex items-center justify-center border border-slate-500 text-slate-500 rounded-full py-3 px-6 hover:bg-slate-500 duration-500 hover:text-white" do %>
+                    お問い合わせフォーム
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-600 w-full px-4 py-8 md:py-20">
+        <div class="max-w-5xl md:flex items-center justify-between text-white container mx-auto md:pb-6 md:border-b border-gray-500">
+            <div class="w-full md:w-2/3 sm:flex items-center">
+                <%= link_to root_path do %>
+                    <%= image_tag "logo-white.svg", class: "w-52 md:w-60 md:hover:opacity-70 cursor-pointer mx-auto" %>
+                <% end %>
+                <div class="text-sm sm:ml-4 mt-4 sm:mt-0 ">
+                    <span class="font-semibold">株式会社グッドライフアシスト</span><br>
+                    <span class="text-xs">〒541-0041 大阪府大阪市中央区北浜2-1-23 日本文化会館4F</span>
+                </div>
+            </div>
+            <div class="flex items-center justify-evenly md:justify-end md:w-1/3 mt-6 md:mt-0">
+                <img src="https://hiroshima-fp.com/assets/images/common/nav-insta.svg" border="0">
+            </div>
+        </div>
+        <div class="hidden max-w-5xl md:flex items-center justify-between text-white text-sm container mx-auto mt-6">
+            <%= link_to about_path, class:"hover:underline" do %>当社について<% end %>
+            <%= link_to service_path, class:"hover:underline" do %>保険のご案内<% end %>
+            <%= link_to faq_path, class:"hover:underline" do %>よくある質問<% end %>
+            <%= link_to contact_path, class:"hover:underline" do %>お問い合わせ<% end %>
+            <%= link_to invitation_path, class:"hover:underline" do %>勧誘方針<% end %>
+            <%= link_to policy_path, class:"hover:underline" do %>プライバシーポリシー<% end %>
+            <%= link_to sitemap_path, class:"hover:underline" do %>サイトマップ<% end %>
+        </div>
+    </div>
+    
+    <div class="bg-gray-500 text-gray-100 p-4 text-xs text-center">当社は損害保険および生命保険の代理店であり、損害保険契約の締結の代理および生命保険契約の締結の媒介をいたします。</div>
+    
+    <div class="bg-gray-600 pt-6 pb-20 md:py-6">
+        <div class="max-w-5xl text-white  container mx-auto text-xs text-center">
+            Copyright © good-life-assist.com, All rights reserved.
+        </div>
+    </div>
+
+    <div class="fixed_menu fixed md:hidden w-full bottom-0 z-50">
+        <div class="flex items-center justify-between bg-white tracking-normal">
+            <%= link_to "tel:06-7167-3855", class:"w-1/4 py-2 px-4 text-xs text-center border-r" do %><i class="ph-phone text-2xl"></i><br>電話する<% end %>
+            <%= link_to contact_path, class:"w-1/4 py-2 px-4 text-xs text-center border-r" do %><i class="ph-envelope-simple text-2xl"></i><br>メールする<% end %>
+            <%= link_to "#", class:"w-1/4 py-2 px-4 text-xs text-center border-r" do %><i class="ph-instagram-logo text-2xl"></i><br>Instagram<% end %>
+            <div class="open_btn w-1/4 py-2 px-4 text-xs text-center bg-slate-400 text-white"><i class="ph-list text-2xl"></i><br>Menu</div>
+        </div>
+    </div>
+</footer>
+
+<nav class="g-nav bg-white md:hidden">
+    <div class="g-nav-list">
+        <div class="flex items-center justify-between py-6 px-4">
+            <%= image_tag "logo.svg", class: "w-48 sm:w-52 md:w-60 md:hover:opacity-70 cursor-pointer" %>
+            <div class="md:hidden close_btn text-xs leading-4 cursor-pointer text-center"><i class="ph-x-bold text-2xl"></i><br>閉じる</div>
+        </div>
+        <%= link_to root_path, class:"w-full p-4 bg-white flex items-center justify-between border-t border-b font-semibold" do %>ホーム<i class="ph-caret-right text-888"></i><% end %>
+        <%= link_to about_path, class:"w-full p-4 bg-white flex items-center justify-between border-b font-semibold" do %>当社について<i class="ph-caret-right text-888"></i><% end %>
+        <%= link_to service_path, class:"w-full p-4 bg-white flex items-center justify-between border-b font-semibold" do %>保険のご案内<i class="ph-caret-right text-888"></i><% end %>
+        <%= link_to faq_path, class:"w-full p-4 bg-white flex items-center justify-between border-b font-semibold" do %>よくある質問<i class="ph-caret-right text-888"></i><% end %>
+        <%= link_to invitation_path, class:"w-full p-4 bg-white flex items-center justify-between border-b font-semibold" do %>勧誘方針<i class="ph-caret-right text-888"></i><% end %>
+        <%= link_to policy_path, class:"w-full p-4 bg-white flex items-center justify-between border-b font-semibold" do %>プライバシーポリシー<i class="ph-caret-right text-888"></i><% end %>
+        <%= link_to sitemap_path, class:"w-full p-4 bg-white flex items-center justify-between border-b font-semibold" do %>サイトマップ<i class="ph-caret-right text-888"></i><% end %>
+        <div class="mt-6 text-xl font-semibold text-center">お気軽にご相談ください</div>
+        <div class="border-2 mt-2 mb-12 mx-4 p-6 text-center">
+            <%= link_to "tel:06-7167-3855", class:"text-2xl font-semibold flex items-center justify-center" do %><i class="ph-phone-fill mr-2"></i>06-7167-3855<% end %>
+            <div class="text-sm">受付 9:00～17:30 (土日祝除く)</div>
+            <%= link_to contact_path, class:"mt-4 bg-slate-400 hover:bg-slate-500 duration-500 text-white p-2 block mx-auto font-semibold" do %>お問い合わせフォーム<% end %>
+        </div>
+    </div>
+</nav>

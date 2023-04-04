@@ -1,0 +1,17 @@
+<% content_for :page_title do %>お問い合わせ<% end %>
+<% content_for :page_sub_title do %>CONTACT<% end %>
+
+<% breadcrumb :contact_complete %>
+
+<main class="w-full my-12 md:my-16">
+  <div class="max-w-3xl container mx-auto px-4">
+    <div class="w-full">
+      <div class="text-xl md:text-2xl font-semibold mb-2 text-center">お問い合わせを受け付けました</div>
+      <div class="text-888 text-center">
+        ご入力いただいた内容を送信しました。<br>
+        ご対応まで今しばらくお待ちください。
+      </div>
+      <%= link_to "ホームへ戻る", root_path, class:"cursor-pointer bg-slate-400 hover:bg-slate-500 duration-500 text-white p-3 md:p-4 block w-full md:w-1/2 mx-auto text-center mt-4 md:mt-8" %>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,54 @@
+<% content_for :page_title do %>お問い合わせ<% end %>
+<% content_for :page_sub_title do %>CONTACT<% end %>
+
+<% breadcrumb :contact_confirm %>
+
+<main class="w-full my-12 md:my-16">
+  <div class="max-w-3xl container mx-auto px-4">
+  <div class="mb-3 text-xl sm:text-2xl font-semibold text-center">お問い合わせフォーム</div>
+  <div class="mb-7 text-left sm:text-center">ご入力内容をご確認の上、下部の「送信する」ボタンを押してください。</div>
+
+    <div class="md:flex items-center mb-4 md:mb-9 py-4 md:py-9 border-t border-b">
+    <div class="w-full md:w-1/4 mb-2 md:mb-0 text-888 font-semibold"><%= label :name, 'お名前' %><span class="md:ml-1 text-de3d2c text-sm">*</span></div>
+    <div class="w-full md:w-3/4"><%= @contact.name %></div>
+  </div>
+
+  <div class="md:flex items-center mb-4 md:mb-9 pb-4 md:pb-9 border-b">
+    <div class="w-full md:w-1/4 mb-2 md:mb-0 text-888 font-semibold"><%= label :email, 'メールアドレス' %><span class="md:ml-1 text-de3d2c text-sm">*</span></div>
+    <div class="w-full md:w-3/4"><%= @contact.email %></div>
+  </div>
+
+  <div class="md:flex items-center mb-4 md:mb-9 pb-4 md:pb-9 border-b">
+    <div class="w-full md:w-1/4 mb-2 md:mb-0 text-888 font-semibold"><%= label :phone_number, '電話番号' %><span class="md:ml-1 text-de3d2c text-sm">*</span></div>
+    <div class="w-full md:w-3/4"><%= @contact.phone_number %></div>
+  </div>
+
+  <div class="md:flex items-center border-b pb-4 md:pb-9 mb-4 md:mb-9">
+    <div class="w-full md:w-1/4 mb-2 md:mb-0 text-888 font-semibold"><%= label :message, 'お問い合わせ内容' %><span class="md:ml-1 text-de3d2c text-sm">*</span></div>
+    <div class="w-full md:w-3/4"><%=safe_join(@contact.message.split("\n"),tag(:br))%></div>
+  </div>
+
+  <div class="flex items-center justify-center mb-8 mx-auto">
+    <div class="w-36 md:w-96">
+    <%= form_with url: back_contact_path, model: @contact, local: true, method: :post do |f| %>
+      <%= f.hidden_field :name %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :phone_number %>
+      <%= f.hidden_field :message %>
+      <%= f.hidden_field :accepted %>
+      <%= f.submit '入力画面に戻る',class:"cursor-pointer border p-3 md:p-4 block w-full mx-auto text-center mt-8 md:mt-8" %>
+    <% end %>
+    </div>
+    <div class="w-36 md:w-96 ml-4 md:ml-8">
+    <%= form_with url: contact_path, model: @contact, local: true do |f| %>
+      <%= f.hidden_field :name %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :phone_number %>
+      <%= f.hidden_field :message %>
+      <%= f.hidden_field :accepted %>
+      <%= f.submit '送信する',class:"cursor-pointer bg-slate-400 hover:bg-slate-500 duration-500 text-white p-3 md:p-4 block w-full mx-auto text-center mt-8 md:mt-8", data:{ confirm: 'お問い合わせ内容を送信します。よろしいですか？' } %>
+    <% end %>
+    </div>
+  </div>
+  </div>
+</main>

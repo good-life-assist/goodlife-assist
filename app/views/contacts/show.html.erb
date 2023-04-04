@@ -1,0 +1,38 @@
+<% content_for :page_title do %>お問い合わせ<% end %>
+<% content_for :page_sub_title do %>CONTACT<% end %>
+
+<% breadcrumb :contact %>
+
+<main class="w-full my-12 md:my-16">
+  <div class="max-w-3xl container mx-auto px-4">
+
+      <div class="mb-3 text-xl sm:text-2xl font-semibold text-center">お問い合わせフォーム</div>
+      <div class="mb-7 text-left sm:text-center">メールでのお問い合わせは、以下の送信フォームをご利用ください。</div>
+
+    
+    <%= form_for(@contact, url: confirm_contact_path) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <div class="mb-8 py-8 border-t border-b">
+        <div class="text-888 font-semibold mb-2">お名前</div>
+        <div class="w-full"><%= f.text_field :name, placeholder: "例）山田 太郎", class: 'placeholder-888 text-sm md:text-base w-full border-2 border-gray-200',required: "true" %></div>
+      </div>
+      <div class="mb-8 pb-8 border-b">
+        <div class="text-888 font-semibold mb-2">メールアドレス</div>
+        <div class="w-full"><%= f.email_field :email, placeholder: "例）info@example.com", class: 'placeholder-888 text-sm md:text-base w-full border-2 border-gray-200',required: "true" %></div>
+      </div>
+      <div class="mb-8 pb-8 border-b">
+        <div class="text-888 font-semibold mb-2">電話番号</div>
+        <div class="w-full"><%= f.text_field :phone_number, placeholder: "例）090-1234-5678", class: 'placeholder-888 text-sm md:text-base w-full border-2 border-gray-200',required: "true" %></div>
+      </div>
+      <div class="mb-8 pb-8 border-b">
+        <div class="text-888 font-semibold mb-2">お問い合わせ内容</div>
+        <div class="w-full"><%= f.text_area :message, class: 'text-sm md:text-base w-full h-72 border-2 border-gray-200',required: "true" %></div>
+      </div>
+      <div class="mb-8 pb-8 border-b">
+        <div class="text-888 font-semibold mb-2">同意事項</div>
+        <div class="w-full flex items-center text-sm md:text-base"><%= f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false" %><div class="ml-2">個人情報保護方針に同意する （<%= link_to "個人情報保護方針はこちら", policy_path,  class: "underline", target: :_blank %>）</div></div>
+      </div>
+      <%= f.submit '入力内容確認',class:"cursor-pointer bg-slate-400 hover:bg-slate-500 duration-500 text-white p-3 md:p-4 block w-full md:w-1/2 mx-auto text-center mt-8 md:mt-8" %>
+      <% end %>
+    </div>
+</main>

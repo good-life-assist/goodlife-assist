@@ -1,0 +1,28 @@
+<% if controller_name == 'homes' %>
+  <div class="w-full py-1.5 bg-gradient-to-r from-slate-500 to-slate-400"></div>
+<% end %>
+<header class="w-full px-4 fadeInTrigger z-50">
+  <div class="max-w-5xl container mx-auto py-4 sm:py-6 flex items-center justify-center sm:justify-between">
+    <div class="flex items-center justify-between sm:w-full lg:w-auto">
+      <h1 class="text-3xl sm:text-4xl ">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.svg", class: "w-48 sm:w-52 md:w-60 md:hover:opacity-70 cursor-pointer" %>
+        <% end %>
+      </h1>
+      <div class="hidden sm:flex items-center justify-end ml-8 lg:mx-12 text-sm">
+            <%= link_to about_path, class:"font-semibold mr-4 md:mr-8 main_menu" do %>当社について<% end %>
+            <%= link_to service_path, class:"font-semibold mr-4 md:mr-8 main_menu" do %>保険のご案内<% end %>
+            <%= link_to faq_path, class:"font-semibold mr-4 md:mr-8 main_menu" do %>よくある質問<% end %>
+            <%= link_to contact_path, class:"font-semibold main_menu" do %>お問い合わせ<% end %>
+        </div>
+    </div>
+    <div class="hidden lg:block text-right">
+        <div class="hidden lg:flex items-center ">
+            <%= link_to "tel:06-7167-3855", class:"font-semibold text-xl lg:text-2xl" do %>
+                06-7167-3855
+                <div class="text-xs font-normal">受付 9:00～17:30 (土日祝除く)</div>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</header>
