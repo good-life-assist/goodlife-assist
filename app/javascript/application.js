@@ -4,7 +4,7 @@ import "controllers"
 function fadeAnime() {
 
   $('.fadeInTrigger, .fadeUpTrigger').each(function () {
-    var elemPos = $(this).offset().top + 80;
+    var elemPos = $(this).offset().top + 40;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
 
