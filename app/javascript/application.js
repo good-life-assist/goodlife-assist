@@ -3,22 +3,16 @@ import "controllers"
 
 function fadeAnime() {
 
-  $('.fadeInTrigger, .fadeUpTrigger').each(function () {
+  $('.fadeUpTrigger').each(function () {
     var elemPos = $(this).offset().top + 40;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
 
     if (scroll >= elemPos - windowHeight) {
-      if ($(this).hasClass('fadeInTrigger')) {
-        $(this).addClass('fadeIn');
-      }
       if ($(this).hasClass('fadeUpTrigger')) {
         $(this).addClass('fadeUp');
       }
     } else {
-      if ($(this).hasClass('fadeInTrigger')) {
-        $(this).removeClass('fadeIn');
-      }
       if ($(this).hasClass('fadeUpTrigger')) {
         $(this).removeClass('fadeUp');
       }
