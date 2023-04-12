@@ -1,8 +1,5 @@
-<% if controller_name == 'homes' %>
-  <div class="w-full py-1.5 bg-gradient-to-r from-slate-500 to-slate-400"></div>
-<% end %>
 <header class="w-full px-4 z-50">
-  <div class="max-w-5xl container mx-auto py-4 sm:py-6 flex items-center justify-center sm:justify-between">
+  <div class="max-w-5xl container mx-auto py-4 sm:py-6 flex items-center justify-between">
     <div class="flex items-center justify-between sm:w-full lg:w-auto">
       <h1 class="text-3xl sm:text-4xl ">
         <%= link_to root_path do %>
@@ -24,5 +21,6 @@
             <% end %>
         </div>
     </div>
+    <div class="md:hidden leading-4 open_btn"><i class="ph ph-list text-3xl"></i></div>
   </div>
 </header>
