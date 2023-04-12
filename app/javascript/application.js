@@ -61,3 +61,29 @@ $(function () {
   });
 });
 
+
+jQuery(function ($) {
+  var fadeIn = $('.fade-in');
+  $(fadeIn).each(function () {
+    var offset = $(this).offset().top;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > offset - windowHeight - 0) {
+      $(this).addClass("scroll-in");
+    }
+  });
+});
+
+jQuery(function ($) {
+  var fadeIn = $('.fade-in2');
+  $(window).scroll(function () {
+    $(fadeIn).each(function () {
+      var offset = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll > offset - windowHeight + 50) {
+        $(this).addClass("scroll-in");
+      }
+    });
+  });
+});
